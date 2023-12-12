@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,21 +9,15 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <title>Flask</title>
   </head>
+
   <body>
     <div class="container">
       <h1 class="text-center">Nanki Career</h1>
-      <img
-        class="img-fluid"
-        id="banner"
-        src="static/great.jpg"
-        alt="image"
-        ,
-        width="320"
-      />
+      <img class="img-fluid" id="banner" src="static/great.jpg" alt="image" ,
+        width="320" />
       <h2 class="text-center mt-2 mb-4">About Nanki</h2>
       <p class="lead">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos voluptate
@@ -31,11 +26,17 @@
         ipsa distinctio ullam nostrum repudiandae itaque.
       </p>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>
-      <p class="lead">TODO - Show the jobs here</p>
+      <p class="lead">
+        {% for job in jobs: %}
+          {% include 'job_item.html' %}
+        {% endfor %}
+      </p>
+
       <div class="text-center">
         <button type="button" class="btn btn-primary btn-lg mb-2">Button</button>
         <p class="mt-4">Copyright &copy;</p>
       </div>
     </div>
   </body>
+
 </html>
